@@ -24,10 +24,11 @@ public class demo {
 		//----------------------------------------------
 		StudentId sid = new StudentId();
 		Student s = new Student();
+		session.get(Student.class, "fe");
 		System.out.println(session==session2);
 		//----------------------------------------------
 		tx.commit();
 		session.close();
-		sessionFactory.close();
+		sessionFactory.close();//有getsession则不要
     }  
 }  
