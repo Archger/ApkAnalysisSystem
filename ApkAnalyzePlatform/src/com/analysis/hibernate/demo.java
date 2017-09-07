@@ -1,11 +1,17 @@
 package com.analysis.hibernate;
 
 
-import org.hibernate.*;
-import org.hibernate.cfg.*;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 import org.junit.Test;
 
-public class hiber_test {
+
+//学习Configuration对象
+// Configuration功能: 配置加载类.用于加载主配置,orm元数据加载
+public class demo {
 
 	@Test
 	public void fun1(){
@@ -19,12 +25,6 @@ public class hiber_test {
 		
 		//4 根据配置信息,创建 SessionFactory对象
 		SessionFactory sf = conf.buildSessionFactory();
-		//--------------------------------------------------
-		//5 获得session
-		//打开一个新的session对象
-		sf.openSession();
-		//获得一个与线程绑定的session对象(明天讲解)
-		sf.getCurrentSession();
+		
 	}
 }
-
