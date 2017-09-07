@@ -30,7 +30,7 @@ public class demo {
 		
 		//----------------------------------------------
 		tx2.commit();//提交事务
-		tx2.rollback();//回滚事务
+		//tx2.rollback();//回滚事务
 		session.close();//释放资源
 		sf.close();//释放资源
 	}
