@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="ApkAnalyzePlatform">
-        <wb-resource deploy-path="/" source-path="/WebRoot" tag="defaultRootSource"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="ApkAnalyzePlatform"/>
-        <property name="java-output-path" value="/ApkAnalyzePlatform/WebRoot/WEB-INF/classes"/>
-    </wb-module>
-</project-modules>
