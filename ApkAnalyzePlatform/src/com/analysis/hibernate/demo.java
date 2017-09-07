@@ -15,16 +15,23 @@ public class demo {
 
 	@Test
 	public void fun1(){
-		//1 创建,调用空参构造
-		Configuration conf = new Configuration();
-		//2 读取指定主配置文件 => 空参加载方法,加载src下的hibernate.cfg.xml文件
-		conf.configure();
-		//3 读取指定orm元数据(扩展),如果主配置中已经引入映射配置.不需要手动加载
-		//conf.addResource(resourceName);
-		//conf.addClass(persistentClass);
-		
-		//4 根据配置信息,创建 SessionFactory对象
+		Configuration conf = new Configuration().configure();
+		//2 根据配置信息,创建 SessionFactory对象
 		SessionFactory sf = conf.buildSessionFactory();
+		//3 获得session
+		Session session = sf.openSession();
+		//4 session获得操作事务的Transaction对象
+		//获得操作事务的tx对象
+		//Transaction tx = session.getTransaction();
+		//开启事务并获得操作事务的tx对象(建议使用)
+		Transaction tx2 = session.beginTransaction();
+		//----------------------------------------------
 		
+		
+		//----------------------------------------------
+		tx2.commit();//提交事务
+		tx2.rollback();//回滚事务
+		session.close();//释放资源
+		sf.close();//释放资源
 	}
 }
